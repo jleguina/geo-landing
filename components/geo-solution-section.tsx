@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, ArrowRight, Search, TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 export function GEOSolutionSection() {
   const problems = [
@@ -88,15 +89,23 @@ export function GEOSolutionSection() {
                 <Button
                   size="lg"
                   className="bg-white text-brand-purple-700 hover:bg-gray-50 font-semibold px-8 py-4"
+                  asChild
                 >
-                  Request Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <Link
+                    href="https://calendly.com/smirpuri-mba2026/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Request Demo
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
                   className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-purple-700 font-semibold px-8 py-4 transition-all duration-200"
+                  asChild
                 >
-                  Sign In
+                  <Link href="https://app.geoadvisor.io">Sign In</Link>
                 </Button>
               </div>
             </div>
