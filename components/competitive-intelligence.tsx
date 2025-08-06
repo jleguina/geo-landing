@@ -1,56 +1,56 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ExternalLink, TrendingUp, TrendingDown } from 'lucide-react'
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExternalLink, TrendingUp } from "lucide-react";
 
 export function CompetitiveIntelligence() {
   const competitors = [
     {
-      name: 'Adidas',
+      name: "Adidas",
       organicMentions: 44,
       sentiment: 70,
-      sentimentTrend: 'up',
+      sentimentTrend: "up",
       winRate: 20,
       shareOfVoice: 26,
-      comparisons: 5
+      comparisons: 5,
     },
     {
-      name: 'New Balance',
+      name: "New Balance",
       organicMentions: 28,
       sentiment: 80,
-      sentimentTrend: 'up',
+      sentimentTrend: "up",
       winRate: 0,
       shareOfVoice: 16,
-      comparisons: 5
+      comparisons: 5,
     },
     {
-      name: 'Asics',
+      name: "Asics",
       organicMentions: 18,
       sentiment: 63,
-      sentimentTrend: 'up',
+      sentimentTrend: "up",
       winRate: 0,
       shareOfVoice: 11,
-      comparisons: 4
+      comparisons: 4,
     },
     {
-      name: 'Under Armour',
+      name: "Under Armour",
       organicMentions: 14,
       sentiment: 90,
-      sentimentTrend: 'up',
+      sentimentTrend: "up",
       winRate: 0,
       shareOfVoice: 8,
-      comparisons: 5
+      comparisons: 5,
     },
     {
-      name: 'Puma',
+      name: "Puma",
       organicMentions: 12,
       sentiment: 70,
-      sentimentTrend: 'up',
+      sentimentTrend: "up",
       winRate: 40,
       shareOfVoice: 7,
-      comparisons: 5
-    }
-  ]
+      comparisons: 5,
+    },
+  ];
 
   return (
     <section className="py-16 px-6 bg-white">
@@ -66,7 +66,10 @@ export function CompetitiveIntelligence() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {competitors.map((competitor) => (
-            <Card key={competitor.name} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card
+              key={competitor.name}
+              className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+            >
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-xl font-bold text-gray-900">
                   {competitor.name}
@@ -80,12 +83,16 @@ export function CompetitiveIntelligence() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-600">Organic Mentions</p>
-                    <p className="text-2xl font-bold text-gray-900">{competitor.organicMentions}%</p>
+                    <p className="text-2xl font-bold text-gray-900">
+                      {competitor.organicMentions}%
+                    </p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Sentiment</p>
                     <div className="flex items-center gap-1">
-                      <p className="text-2xl font-bold text-[#00C851]">{competitor.sentiment}</p>
+                      <p className="text-2xl font-bold text-[#00C851]">
+                        {competitor.sentiment}
+                      </p>
                       <TrendingUp className="h-4 w-4 text-[#00C851]" />
                     </div>
                   </div>
@@ -95,7 +102,9 @@ export function CompetitiveIntelligence() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-600">Nike Win Rate</p>
-                    <p className="text-2xl font-bold text-gray-900">{competitor.winRate}%</p>
+                    <p className="text-2xl font-bold text-gray-900">
+                      {competitor.winRate}%
+                    </p>
                   </div>
                   <Badge variant="secondary" className="text-red-600">
                     {competitor.comparisons} comparisons
@@ -109,19 +118,27 @@ export function CompetitiveIntelligence() {
                     <span className="font-medium text-[#00C851]">80</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">{competitor.name} sentiment:</span>
-                    <span className="font-medium text-[#00C851]">{competitor.sentiment}</span>
+                    <span className="text-gray-600">
+                      {competitor.name} sentiment:
+                    </span>
+                    <span className="font-medium text-[#00C851]">
+                      {competitor.sentiment}
+                    </span>
                   </div>
                 </div>
 
                 {/* Share of Voice */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm text-gray-600">Share of Voice</span>
-                    <span className="text-sm font-medium text-gray-900">{competitor.shareOfVoice}%</span>
+                    <span className="text-sm text-gray-600">
+                      Share of Voice
+                    </span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {competitor.shareOfVoice}%
+                    </span>
                   </div>
                   <div className="w-full bg-gray-100 rounded-full h-2">
-                    <div 
+                    <div
                       className="h-2 bg-gradient-to-r from-[#4A4FE1] to-[#7E84FF] rounded-full transition-all duration-500"
                       style={{ width: `${competitor.shareOfVoice}%` }}
                     />
@@ -133,5 +150,5 @@ export function CompetitiveIntelligence() {
         </div>
       </div>
     </section>
-  )
+  );
 }

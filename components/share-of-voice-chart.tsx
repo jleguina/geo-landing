@@ -1,15 +1,15 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ShareOfVoiceChart() {
   const models = [
-    { name: 'ChatGPT', percentage: 27, color: 'bg-[#00C851]' },
-    { name: 'Claude', percentage: 23, color: 'bg-blue-500' },
-    { name: 'Perplexity', percentage: 19, color: 'bg-purple-500' },
-    { name: 'Gemini', percentage: 16, color: 'bg-orange-500' },
-    { name: 'Google AI', percentage: 15, color: 'bg-red-500' }
-  ]
+    { name: "ChatGPT", percentage: 27, color: "bg-[#00C851]" },
+    { name: "Claude", percentage: 23, color: "bg-blue-500" },
+    { name: "Perplexity", percentage: 19, color: "bg-purple-500" },
+    { name: "Gemini", percentage: 16, color: "bg-orange-500" },
+    { name: "Google AI", percentage: 15, color: "bg-red-500" },
+  ];
 
   return (
     <section className="py-16 px-6 bg-white">
@@ -25,7 +25,9 @@ export function ShareOfVoiceChart() {
               </p>
             </div>
             <Button variant="outline" size="sm">
-              <Badge variant="secondary" className="mr-2">5</Badge>
+              <Badge variant="secondary" className="mr-2">
+                5
+              </Badge>
               Models
             </Button>
           </CardHeader>
@@ -35,7 +37,9 @@ export function ShareOfVoiceChart() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className={`w-3 h-3 rounded-full ${model.color}`} />
-                    <span className="font-medium text-gray-900">{model.name}</span>
+                    <span className="font-medium text-gray-900">
+                      {model.name}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-gray-600">
@@ -47,7 +51,7 @@ export function ShareOfVoiceChart() {
                   </div>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-3">
-                  <div 
+                  <div
                     className={`h-3 rounded-full ${model.color} transition-all duration-500`}
                     style={{ width: `${model.percentage}%` }}
                   />
@@ -58,5 +62,5 @@ export function ShareOfVoiceChart() {
         </Card>
       </div>
     </section>
-  )
+  );
 }

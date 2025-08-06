@@ -1,8 +1,14 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -48,37 +54,37 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         // Professional color palette with lighter wavy purple background
-        'brand-purple': {
-          25: '#fdfcff',
-          50: '#f9f7ff',
-          75: '#f5f2ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-          950: '#2e1065',
+        "brand-purple": {
+          25: "#fdfcff",
+          50: "#f9f7ff",
+          75: "#f5f2ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+          950: "#2e1065",
         },
-        'brand-blue': {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+        "brand-blue": {
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+          950: "#172554",
         },
-        'brand-success': '#10b981',
-        'brand-warning': '#f59e0b',
-        'brand-error': '#ef4444',
+        "brand-success": "#10b981",
+        "brand-warning": "#f59e0b",
+        "brand-error": "#ef4444",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -100,7 +106,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'wavy-purple': `
+        "wavy-purple": `
           radial-gradient(ellipse at 15% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
           radial-gradient(ellipse at 85% 20%, rgba(124, 58, 237, 0.10) 0%, transparent 60%),
           radial-gradient(ellipse at 25% 70%, rgba(109, 40, 217, 0.08) 0%, transparent 55%),
@@ -115,6 +121,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

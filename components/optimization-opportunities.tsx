@@ -1,38 +1,38 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Zap, AlertTriangle, TrendingUp, ArrowRight } from 'lucide-react'
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertTriangle, ArrowRight, TrendingUp, Zap } from "lucide-react";
 
 export function OptimizationOpportunities() {
   const opportunities = [
     {
-      title: 'Quick Wins',
-      value: '10',
-      description: 'easy opportunities',
+      title: "Quick Wins",
+      value: "10",
+      description: "easy opportunities",
       icon: Zap,
-      color: 'text-[#00C851]',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200'
+      color: "text-[#00C851]",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
     },
     {
-      title: 'Content Gaps',
-      value: '0',
-      description: 'identified gaps',
+      title: "Content Gaps",
+      value: "0",
+      description: "identified gaps",
       icon: AlertTriangle,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200'
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
     },
     {
-      title: 'Potential Impact',
-      value: '+10%',
-      description: 'visibility gain',
+      title: "Potential Impact",
+      value: "+10%",
+      description: "visibility gain",
       icon: TrendingUp,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200'
-    }
-  ]
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+    },
+  ];
 
   return (
     <section className="py-16 px-6 bg-gray-50">
@@ -48,10 +48,15 @@ export function OptimizationOpportunities() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {opportunities.map((opportunity) => (
-            <Card key={opportunity.title} className={`border-2 ${opportunity.borderColor} ${opportunity.bgColor} shadow-lg`}>
+            <Card
+              key={opportunity.title}
+              className={`border-2 ${opportunity.borderColor} ${opportunity.bgColor} shadow-lg`}
+            >
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
-                  <opportunity.icon className={`h-8 w-8 ${opportunity.color}`} />
+                  <opportunity.icon
+                    className={`h-8 w-8 ${opportunity.color}`}
+                  />
                   <Badge variant="secondary" className="text-xs">
                     Updated
                   </Badge>
@@ -86,8 +91,12 @@ export function OptimizationOpportunities() {
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-[#00C851] rounded-full" />
                   <div>
-                    <p className="font-medium text-gray-900">Optimize product descriptions for AI crawlers</p>
-                    <p className="text-sm text-gray-600">Expected impact: +3% visibility gain</p>
+                    <p className="font-medium text-gray-900">
+                      Optimize product descriptions for AI crawlers
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Expected impact: +3% visibility gain
+                    </p>
                   </div>
                 </div>
                 <Button size="sm" className="bg-[#00C851] hover:bg-green-600">
@@ -100,8 +109,12 @@ export function OptimizationOpportunities() {
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full" />
                   <div>
-                    <p className="font-medium text-gray-900">Improve citation sources quality</p>
-                    <p className="text-sm text-gray-600">Expected impact: +4% visibility gain</p>
+                    <p className="font-medium text-gray-900">
+                      Improve citation sources quality
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Expected impact: +4% visibility gain
+                    </p>
                   </div>
                 </div>
                 <Button size="sm" variant="outline">
@@ -114,8 +127,12 @@ export function OptimizationOpportunities() {
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-600 rounded-full" />
                   <div>
-                    <p className="font-medium text-gray-900">Enhance brand mention context</p>
-                    <p className="text-sm text-gray-600">Expected impact: +3% visibility gain</p>
+                    <p className="font-medium text-gray-900">
+                      Enhance brand mention context
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Expected impact: +3% visibility gain
+                    </p>
                   </div>
                 </div>
                 <Button size="sm" variant="outline">
@@ -128,5 +145,5 @@ export function OptimizationOpportunities() {
         </Card>
       </div>
     </section>
-  )
+  );
 }

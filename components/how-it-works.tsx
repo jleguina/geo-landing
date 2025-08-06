@@ -1,30 +1,33 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { Search, Brain, BarChart3 } from 'lucide-react'
+import { Card, CardContent } from "@/components/ui/card";
+import { BarChart3, Brain, Search } from "lucide-react";
 
 export function HowItWorks() {
   const steps = [
     {
       icon: Search,
-      title: 'Retrieval',
-      description: 'AI models search and retrieve relevant information from various sources across the web.',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      title: "Retrieval",
+      description:
+        "AI models search and retrieve relevant information from various sources across the web.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
     },
     {
       icon: Brain,
-      title: 'Generation',
-      description: 'Models process and generate responses, determining which brands and information to include.',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50'
+      title: "Generation",
+      description:
+        "Models process and generate responses, determining which brands and information to include.",
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
     },
     {
       icon: BarChart3,
-      title: 'Measurement',
-      description: 'We continuously monitor and analyze your brand\'s presence in AI-generated responses.',
-      color: 'text-[#00C851]',
-      bgColor: 'bg-green-50'
-    }
-  ]
+      title: "Measurement",
+      description:
+        "We continuously monitor and analyze your brand's presence in AI-generated responses.",
+      color: "text-[#00C851]",
+      bgColor: "bg-green-50",
+    },
+  ];
 
   return (
     <section className="py-16 px-6 bg-gray-50">
@@ -34,8 +37,9 @@ export function HowItWorks() {
             How GEO Works
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Understanding the three-stage process of Generative Engine Optimization 
-            based on the retrieval-generation-measurement framework.
+            Understanding the three-stage process of Generative Engine
+            Optimization based on the retrieval-generation-measurement
+            framework.
           </p>
         </div>
 
@@ -44,7 +48,9 @@ export function HowItWorks() {
             <div key={step.title} className="relative">
               <Card className="border-0 shadow-lg h-full">
                 <CardContent className="p-6 text-center">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${step.bgColor} mb-4`}>
+                  <div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${step.bgColor} mb-4`}
+                  >
                     <step.icon className={`h-8 w-8 ${step.color}`} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -55,7 +61,7 @@ export function HowItWorks() {
                   </p>
                 </CardContent>
               </Card>
-              
+
               {/* Arrow connector */}
               {index < steps.length - 1 && (
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
@@ -68,5 +74,5 @@ export function HowItWorks() {
         </div>
       </div>
     </section>
-  )
+  );
 }

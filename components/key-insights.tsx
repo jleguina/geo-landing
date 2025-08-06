@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Shield, AlertCircle, CheckCircle, ArrowRight } from 'lucide-react'
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertCircle, ArrowRight, CheckCircle, Shield } from "lucide-react";
 
 export function KeyInsights() {
   return (
@@ -22,9 +22,12 @@ export function KeyInsights() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="font-medium text-gray-900">Strong Performance in ChatGPT</p>
+                    <p className="font-medium text-gray-900">
+                      Strong Performance in ChatGPT
+                    </p>
                     <p className="text-sm text-gray-600 mt-1">
-                      Your brand has 27% share of voice in ChatGPT responses, outperforming competitors by 8%.
+                      Your brand has 27% share of voice in ChatGPT responses,
+                      outperforming competitors by 8%.
                     </p>
                   </div>
                 </div>
@@ -34,9 +37,12 @@ export function KeyInsights() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-[#00C851] mt-0.5" />
                   <div>
-                    <p className="font-medium text-gray-900">Sentiment Trending Positive</p>
+                    <p className="font-medium text-gray-900">
+                      Sentiment Trending Positive
+                    </p>
                     <p className="text-sm text-gray-600 mt-1">
-                      Brand sentiment has improved by 12% over the last 30 days across all AI models.
+                      Brand sentiment has improved by 12% over the last 30 days
+                      across all AI models.
                     </p>
                   </div>
                 </div>
@@ -46,9 +52,12 @@ export function KeyInsights() {
                 <div className="flex items-start gap-3">
                   <AlertCircle className="h-5 w-5 text-orange-600 mt-0.5" />
                   <div>
-                    <p className="font-medium text-gray-900">Opportunity in Perplexity</p>
+                    <p className="font-medium text-gray-900">
+                      Opportunity in Perplexity
+                    </p>
                     <p className="text-sm text-gray-600 mt-1">
-                      Low visibility in Perplexity responses presents a 15% growth opportunity.
+                      Low visibility in Perplexity responses presents a 15%
+                      growth opportunity.
                     </p>
                   </div>
                 </div>
@@ -68,24 +77,34 @@ export function KeyInsights() {
               <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-200">
                 <CheckCircle className="h-6 w-6 text-[#00C851]" />
                 <div>
-                  <p className="font-medium text-gray-900">No reputation risks detected</p>
-                  <p className="text-sm text-gray-600">across all analyzed responses.</p>
+                  <p className="font-medium text-gray-900">
+                    No reputation risks detected
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    across all analyzed responses.
+                  </p>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Risk Assessment</span>
-                  <Badge className="bg-green-100 text-green-800">Low Risk</Badge>
+                  <Badge className="bg-green-100 text-green-800">
+                    Low Risk
+                  </Badge>
                 </div>
-                
+
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">Content Monitoring</span>
+                  <span className="text-sm text-gray-600">
+                    Content Monitoring
+                  </span>
                   <Badge className="bg-green-100 text-green-800">Active</Badge>
                 </div>
-                
+
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">Sentiment Alerts</span>
+                  <span className="text-sm text-gray-600">
+                    Sentiment Alerts
+                  </span>
                   <Badge className="bg-green-100 text-green-800">Enabled</Badge>
                 </div>
               </div>
@@ -99,5 +118,5 @@ export function KeyInsights() {
         </div>
       </div>
     </section>
-  )
+  );
 }

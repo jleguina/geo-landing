@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function NewEraCTASection() {
   return (
@@ -11,20 +11,26 @@ export function NewEraCTASection() {
             Ready to Define the New Era of Search?
           </h3>
           <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-            GEO Advisor gives marketing and growth teams visibility, control, and leverage 
-            in the age of AI-powered search.
+            GEO Advisor gives marketing and growth teams visibility, control,
+            and leverage in the age of AI-powered search.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-brand-purple-700 hover:bg-gray-50 font-semibold px-10 py-4 text-lg">
+            <Button
+              size="lg"
+              className="bg-white text-brand-purple-700 hover:bg-gray-50 font-semibold px-10 py-4 text-lg"
+            >
               Request Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-purple-700 font-semibold px-10 py-4 text-lg transition-all duration-200">
+            <Button
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-purple-700 font-semibold px-10 py-4 text-lg transition-all duration-200"
+            >
               Sign In
             </Button>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
