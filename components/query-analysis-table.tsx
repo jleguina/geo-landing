@@ -26,24 +26,24 @@ export function QueryAnalysisTable() {
       query: "Where can I find official Nike stores near me in the US?",
       type: "Branded",
       intent: "Transactional",
-      mentions: "Mentioned (5x)",
+      mentions: "Mentioned",
       category: "Athletic Footwear",
-      sources: 0,
+      sources: 3,
     },
     {
       query:
         "How do I transfer my rewards program from Under Armour to Nike if possible?",
       type: "Competitive",
       intent: "Transactional",
-      mentions: "Mentioned (4x)",
+      mentions: "Mentioned",
       category: "Athletic Footwear",
-      sources: 0,
+      sources: 1,
     },
     {
       query: "Show me stores offering discounts on running shoes this weekend.",
       type: "Non-Branded",
       intent: "Transactional",
-      mentions: "Mentioned (2x)",
+      mentions: "Mentioned",
       category: "Athletic Footwear",
       sources: 6,
     },
@@ -75,43 +75,59 @@ export function QueryAnalysisTable() {
   };
 
   return (
-    <section className="py-24 px-6 bg-wavy-purple">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-wavy-purple">
       <div className="mx-auto max-w-7xl">
         <Card className="border-0 shadow-2xl bg-white rounded-3xl overflow-hidden">
-          <CardHeader className="p-12 pb-8">
+          <CardHeader className="p-6 sm:p-8 lg:p-12 pb-6 sm:pb-8">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-2xl font-bold text-neutral-900">
+                <CardTitle className="text-xl sm:text-2xl font-bold text-neutral-900">
                   Query Analysis
                 </CardTitle>
-                <p className="text-neutral-700 mt-2">
+                <p className="text-sm sm:text-base text-neutral-700 mt-2">
                   Detailed insights into how AI models respond to your queries
                 </p>
               </div>
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              <div className="text-center p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-                <div className="text-2xl font-bold text-neutral-900">500</div>
-                <div className="text-sm text-neutral-600">Total Queries</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
+              <div className="text-center p-4 sm:p-6 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+                <div className="text-xl sm:text-2xl font-bold text-neutral-900">
+                  500
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-600">
+                  Total Queries
+                </div>
               </div>
-              <div className="text-center p-6 rounded-2xl bg-white border border-emerald-200 shadow-sm">
-                <div className="text-2xl font-bold text-emerald-600">365</div>
-                <div className="text-sm text-neutral-600">Brand Mentions</div>
+              <div className="text-center p-4 sm:p-6 rounded-2xl bg-white border border-emerald-200 shadow-sm">
+                <div className="text-xl sm:text-2xl font-bold text-emerald-600">
+                  365
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-600">
+                  Brand Mentions
+                </div>
               </div>
-              <div className="text-center p-6 rounded-2xl bg-white border border-blue-200 shadow-sm">
-                <div className="text-2xl font-bold text-blue-600">64</div>
-                <div className="text-sm text-neutral-600">Avg. Sentiment</div>
+              <div className="text-center p-4 sm:p-6 rounded-2xl bg-white border border-blue-200 shadow-sm">
+                <div className="text-xl sm:text-2xl font-bold text-blue-600">
+                  64
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-600">
+                  Avg. Sentiment
+                </div>
               </div>
-              <div className="text-center p-6 rounded-2xl bg-white border border-purple-200 shadow-sm">
-                <div className="text-2xl font-bold text-purple-600">3</div>
-                <div className="text-sm text-neutral-600">Categories</div>
+              <div className="text-center p-4 sm:p-6 rounded-2xl bg-white border border-purple-200 shadow-sm">
+                <div className="text-xl sm:text-2xl font-bold text-purple-600">
+                  3
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-600">
+                  Categories
+                </div>
               </div>
             </div>
           </CardHeader>
 
-          <CardContent className="px-12 pb-12">
+          <CardContent className="px-6 sm:px-8 lg:px-12 pb-6 sm:pb-8 lg:pb-12">
             {/* Filters */}
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               <div className="relative flex-1">
@@ -151,8 +167,8 @@ export function QueryAnalysisTable() {
               </Button>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto bg-white rounded-2xl border border-neutral-200">
+            {/* Table - Hidden on mobile */}
+            <div className="hidden md:block overflow-x-auto bg-white rounded-2xl border border-neutral-200">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-neutral-200 bg-neutral-50">
@@ -222,28 +238,88 @@ export function QueryAnalysisTable() {
               </table>
             </div>
 
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {queries.map((query, index) => (
+                <Card
+                  key={index}
+                  className="border border-neutral-200 shadow-sm"
+                >
+                  <CardContent className="p-4">
+                    <p className="text-sm text-neutral-900 font-medium mb-3">
+                      {query.query}
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-neutral-600">Type</span>
+                        <Badge
+                          className={`border text-xs ${getTypeColor(query.type)}`}
+                        >
+                          {query.type}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-neutral-600">Intent</span>
+                        <span className="text-xs text-neutral-900">
+                          {query.intent}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-neutral-600">
+                          Mentions
+                        </span>
+                        <Badge
+                          className={`border text-xs ${getMentionColor(query.mentions)}`}
+                        >
+                          {query.mentions}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-neutral-600">
+                          Category
+                        </span>
+                        <span className="text-xs text-neutral-900">
+                          {query.category}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-neutral-600">
+                          Sources
+                        </span>
+                        <span className="text-xs font-medium text-neutral-900">
+                          {query.sources} sources
+                        </span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
             {/* Pagination */}
-            <div className="flex items-center justify-between mt-6">
-              <p className="text-sm text-neutral-600">
+            <div className="flex flex-col sm:flex-row items-center justify-between mt-6 gap-4">
+              <p className="text-xs sm:text-sm text-neutral-600 text-center sm:text-left">
                 Showing 1 to 20 of 500 results
               </p>
               <div className="flex items-center gap-2">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                  className="border-neutral-200 text-neutral-700 hover:bg-neutral-50 text-xs sm:text-sm"
                 >
-                  <ChevronLeft className="h-4 w-4" />
-                  Previous
+                  <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Previous</span>
                 </Button>
-                <span className="text-sm text-neutral-600">Page 1 of 25</span>
+                <span className="text-xs sm:text-sm text-neutral-600">
+                  Page 1 of 25
+                </span>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                  className="border-neutral-200 text-neutral-700 hover:bg-neutral-50 text-xs sm:text-sm"
                 >
-                  Next
-                  <ChevronRight className="h-4 w-4" />
+                  <span className="hidden sm:inline">Next</span>
+                  <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
                 </Button>
               </div>
             </div>

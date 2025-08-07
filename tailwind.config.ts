@@ -107,15 +107,9 @@ const config: Config = {
       },
       backgroundImage: {
         "wavy-purple": `
-          radial-gradient(ellipse at 15% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-          radial-gradient(ellipse at 85% 20%, rgba(124, 58, 237, 0.10) 0%, transparent 60%),
-          radial-gradient(ellipse at 25% 70%, rgba(109, 40, 217, 0.08) 0%, transparent 55%),
-          radial-gradient(ellipse at 75% 80%, rgba(147, 51, 234, 0.09) 0%, transparent 50%),
-          radial-gradient(ellipse at 50% 30%, rgba(168, 85, 247, 0.07) 0%, transparent 45%),
-          radial-gradient(ellipse at 10% 90%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-          radial-gradient(ellipse at 90% 60%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
-          radial-gradient(ellipse at 40% 5%, rgba(109, 40, 217, 0.05) 0%, transparent 35%),
-          linear-gradient(135deg, rgba(139, 92, 246, 0.04) 0%, rgba(124, 58, 237, 0.06) 25%, rgba(109, 40, 217, 0.04) 50%, rgba(147, 51, 234, 0.03) 75%, rgba(168, 85, 247, 0.05) 100%)
+          radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
+          radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+          linear-gradient(to bottom right, rgba(249, 247, 255, 1) 0%, rgba(245, 242, 255, 1) 100%)
         `,
       },
     },
