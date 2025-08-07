@@ -61,42 +61,42 @@ export function MetricsDashboard() {
   ];
 
   return (
-    <section id="metrics" className="py-24 px-6 bg-wavy-purple">
+    <section
+      id="metrics"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-wavy-purple"
+    >
       <div className="mx-auto max-w-7xl">
         <Card className="border-0 shadow-2xl bg-white rounded-3xl overflow-hidden">
-          <CardContent className="p-12">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-purple-50 px-6 py-3 text-sm font-semibold text-brand-purple-700 mb-8 border border-brand-purple-200">
+          <CardContent className="p-6 sm:p-8 lg:p-12">
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-purple-50 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-brand-purple-700 mb-6 sm:mb-8 border border-brand-purple-200">
                 <Activity className="h-4 w-4 text-brand-success animate-pulse" />
                 Live Analytics Dashboard
               </div>
-              <h2 className="text-5xl font-bold text-neutral-900 mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 Core Performance{" "}
                 <span className="bg-gradient-to-r from-brand-purple-600 to-brand-blue-600 bg-clip-text text-transparent">
                   Metrics
                 </span>
               </h2>
-              <p className="text-xl text-neutral-700 max-w-4xl mx-auto font-medium leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-4xl mx-auto font-medium leading-relaxed px-4 sm:px-0">
                 Real-time insights into your brand's AI search performance
                 across all major platforms with enterprise-grade precision
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:gap-8 lg:grid-cols-4">
               {metrics.map((metric) => (
                 <Card
                   key={metric.title}
-                  className="relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white"
+                  className="relative overflow-hidden border-0 shadow-xl hover:shadow-2xl hover:border-brand-purple-200 transition-all duration-500 group bg-white"
                 >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  />
                   <CardHeader className="pb-4 relative z-10">
                     <div className="flex items-center justify-between">
                       <div
-                        className={`p-4 rounded-2xl bg-gradient-to-br ${metric.gradient} group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                        className={`p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${metric.gradient} group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                       >
-                        <metric.icon className="h-7 w-7 text-white" />
+                        <metric.icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 text-white" />
                       </div>
                       <div className="flex items-center gap-2">
                         <TrendingUp className="h-4 w-4 text-brand-success" />
@@ -108,10 +108,10 @@ export function MetricsDashboard() {
                   </CardHeader>
                   <CardContent className="relative z-10">
                     <div className="space-y-4">
-                      <div className="text-4xl font-bold text-neutral-900">
+                      <div className="text-3xl sm:text-4xl font-bold text-neutral-900">
                         {metric.value}
                       </div>
-                      <div className="text-lg font-semibold text-neutral-800">
+                      <div className="text-base sm:text-lg font-semibold text-neutral-800">
                         {metric.title}
                       </div>
                       <div className="text-sm text-neutral-600 font-medium">

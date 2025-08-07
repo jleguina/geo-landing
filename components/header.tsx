@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export function Header() {
@@ -35,18 +34,18 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Button
               variant="ghost"
               size="sm"
-              className="text-neutral-600"
+              className="hidden md:inline-flex text-neutral-600"
               asChild
             >
               <Link href="https://app.geoadvisor.io">Sign In</Link>
             </Button>
             <Button
               size="sm"
-              className="bg-brand-purple-600 hover:bg-brand-purple-700"
+              className="bg-brand-purple-600 hover:bg-brand-purple-700 text-xs md:text-sm px-3 md:px-4"
               asChild
             >
               <Link
@@ -56,9 +55,6 @@ export function Header() {
               >
                 Request Demo
               </Link>
-            </Button>
-            <Button variant="ghost" size="sm" className="md:hidden">
-              <Menu className="h-4 w-4" />
             </Button>
           </div>
         </div>
