@@ -1,15 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { ChevronLeft, ChevronRight, Filter, Search } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function QueryAnalysisTable() {
   const queries = [
@@ -128,45 +120,6 @@ export function QueryAnalysisTable() {
           </CardHeader>
 
           <CardContent className="px-6 sm:px-8 lg:px-12 pb-6 sm:pb-8 lg:pb-12">
-            {/* Filters */}
-            <div className="flex flex-col md:flex-row gap-4 mb-6">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 h-4 w-4" />
-                <Input
-                  placeholder="Search queries..."
-                  className="pl-10 bg-white border-neutral-200 text-neutral-900 placeholder:text-neutral-500"
-                />
-              </div>
-              <Select defaultValue="all-types">
-                <SelectTrigger className="w-full md:w-40 bg-white border-neutral-200 text-neutral-900">
-                  <SelectValue placeholder="All Types" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all-types">All Types</SelectItem>
-                  <SelectItem value="branded">Branded</SelectItem>
-                  <SelectItem value="non-branded">Non-Branded</SelectItem>
-                  <SelectItem value="competitive">Competitive</SelectItem>
-                </SelectContent>
-              </Select>
-              <Select defaultValue="all-intents">
-                <SelectTrigger className="w-full md:w-40 bg-white border-neutral-200 text-neutral-900">
-                  <SelectValue placeholder="All Intents" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all-intents">All Intents</SelectItem>
-                  <SelectItem value="transactional">Transactional</SelectItem>
-                  <SelectItem value="informational">Informational</SelectItem>
-                </SelectContent>
-              </Select>
-              <Button
-                variant="outline"
-                size="icon"
-                className="border-neutral-200 text-neutral-700 hover:bg-neutral-50"
-              >
-                <Filter className="h-4 w-4" />
-              </Button>
-            </div>
-
             {/* Table - Hidden on mobile */}
             <div className="hidden md:block overflow-x-auto bg-white rounded-2xl border border-neutral-200">
               <table className="w-full">
