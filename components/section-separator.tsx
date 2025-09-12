@@ -12,7 +12,7 @@ interface SectionSeparatorProps {
 export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
   if (variant === "gradient") {
     return (
-      <div className="relative h-16 bg-white overflow-hidden">
+      <div className="relative h-24 bg-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neutral-200/50 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
@@ -23,7 +23,7 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
 
   if (variant === "dots") {
     return (
-      <div className="relative h-16 bg-white overflow-hidden">
+      <div className="relative h-24 bg-white overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex gap-2">
             {[...Array(5)].map((_, i) => (
@@ -41,18 +41,18 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
 
   if (variant === "waves") {
     return (
-      <div className="relative h-16 bg-white overflow-hidden">
+      <div className="relative h-32 bg-white overflow-hidden">
         <svg
           className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1200 64"
+          viewBox="0 0 1200 128"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,32 C300,64 900,0 1200,32 L1200,64 L0,64 Z"
+            d="M0,64 C200,32 400,96 600,64 C800,32 1000,96 1200,64 L1200,128 L0,128 Z"
             fill="rgba(139,92,246,0.05)"
           />
           <path
-            d="M0,40 C300,8 900,56 1200,24 L1200,64 L0,64 Z"
+            d="M0,80 C300,48 600,112 900,80 C1050,64 1150,96 1200,80 L1200,128 L0,128 Z"
             fill="rgba(37,99,235,0.05)"
           />
         </svg>
@@ -62,7 +62,7 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
 
   if (variant === "geometric") {
     return (
-      <div className="relative h-16 bg-white overflow-hidden">
+      <div className="relative h-24 bg-white overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative">
             <div
@@ -97,7 +97,7 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
 
   if (variant === "glow") {
     return (
-      <div className="relative h-16 bg-white overflow-hidden">
+      <div className="relative h-24 bg-white overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative">
             <div className="w-64 h-px bg-gradient-to-r from-transparent via-brand-purple-300 to-transparent" />
@@ -133,12 +133,12 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
 
   if (variant === "cool") {
     return (
-      <div className="relative h-16 bg-wavy-purple overflow-hidden">
-        {/* Subtle gradient waves without dots */}
+      <div className="relative h-32 bg-wavy-purple overflow-hidden">
+        {/* Expanded gradient waves with more amplitude */}
         <div className="absolute inset-0">
           <svg
             className="w-full h-full"
-            viewBox="0 0 1200 64"
+            viewBox="0 0 1200 128"
             preserveAspectRatio="none"
           >
             <defs>
@@ -166,37 +166,37 @@ export function SectionSeparator({ variant = "cool" }: SectionSeparatorProps) {
               </linearGradient>
             </defs>
             <path
-              d="M0,32 C300,16 600,48 900,24 C1050,12 1150,36 1200,28 L1200,64 L0,64 Z"
+              d="M0,64 C150,20 350,108 600,64 C850,20 1050,108 1200,64 L1200,128 L0,128 Z"
               fill="url(#wave-gradient-1)"
               className="animate-pulse"
-              style={{ animationDuration: "5s" }}
+              style={{ animationDuration: "8s" }}
             />
             <path
-              d="M0,40 C200,56 400,24 600,40 C800,56 1000,24 1200,36 L1200,64 L0,64 Z"
+              d="M0,80 C200,40 400,120 600,80 C800,40 1000,120 1200,80 L1200,128 L0,128 Z"
               fill="url(#wave-gradient-2)"
               className="animate-pulse"
-              style={{ animationDuration: "7s", animationDelay: "1.5s" }}
+              style={{ animationDuration: "10s", animationDelay: "2s" }}
             />
             <path
-              d="M0,28 C150,44 350,12 550,28 C750,44 950,12 1200,24 L1200,64 L0,64 Z"
+              d="M0,48 C300,96 600,0 900,48 C1050,72 1150,24 1200,48 L1200,128 L0,128 Z"
               fill="rgba(124, 58, 237, 0.06)"
               className="animate-pulse"
-              style={{ animationDuration: "6s", animationDelay: "0.5s" }}
+              style={{ animationDuration: "9s", animationDelay: "1s" }}
             />
           </svg>
         </div>
 
-        {/* Subtle floating particles */}
+        {/* Expanded floating particles with better spacing */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-0.5 h-0.5 bg-brand-purple-300/30 rounded-full animate-pulse"
+              className="absolute w-1 h-1 bg-brand-purple-300/40 rounded-full animate-pulse"
               style={{
-                left: `${20 + i * 12}%`,
-                top: `${40 + (i % 2) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${3 + (i % 2)}s`,
+                left: `${15 + i * 10}%`,
+                top: `${30 + Math.sin(i * 0.5) * 40}%`,
+                animationDelay: `${i * 0.6}s`,
+                animationDuration: `${4 + (i % 3)}s`,
               }}
             />
           ))}

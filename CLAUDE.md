@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important Note for Development
+
+**DO NOT run `pnpm dev` - The user is running the development server themselves.**
+
 ## Project Overview
 
 **GEO Advisor Landing Page** - A modern, high-converting landing page for GEO Advisor, the AI Search Intelligence platform that helps brands track and optimize their visibility across AI-powered search engines (ChatGPT, Claude, Perplexity, Gemini, and Grok).
