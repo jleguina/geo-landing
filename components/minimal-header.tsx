@@ -17,7 +17,12 @@ export function MinimalHeader({
       <div className="px-6 py-6 sm:px-8 sm:py-8">
         <nav className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link
+            href="/"
+            className="flex items-center gap-2 group"
+            title="GEO Advisor - AI Visibility Analytics Platform"
+            aria-label="GEO Advisor Home"
+          >
             <div
               style={{
                 position: "relative",
@@ -147,6 +152,8 @@ export function MinimalHeader({
               <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-purple-500/60 to-pink-500/60">
                 <Link
                   href="https://app.geoadvisor.io"
+                  title="Sign in to GEO Advisor Dashboard"
+                  aria-label="Sign in to your account"
                   className="relative inline-block px-6 py-2 text-sm font-semibold text-white backdrop-blur-lg transition-all rounded-[10px]"
                   style={{
                     background: "rgba(255, 255, 255, 0.1)",
@@ -225,6 +232,8 @@ export function MinimalHeader({
               <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-purple-500/70 to-pink-500/70">
                 <Link
                   href="https://calendly.com/santalucia/geo"
+                  title="Schedule a Demo of GEO Advisor"
+                  aria-label="Book a demo"
                   className="relative inline-block px-6 py-2 text-sm font-bold text-white backdrop-blur-lg transition-all rounded-[10px]"
                   style={{
                     background: "rgba(255, 255, 255, 0.15)",

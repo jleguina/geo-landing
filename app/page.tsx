@@ -295,7 +295,7 @@ export default function HomePage() {
               textTransform: "uppercase",
             }}
           >
-            AI Search Intelligence
+            The Ahrefs for AI Search
           </text>
 
           {/* Description text - no extrusion */}
@@ -312,7 +312,7 @@ export default function HomePage() {
               userSelect: "none",
             }}
           >
-            Monitor and optimize your visibility across AI platforms
+            Track brand mentions • Measure sentiment • Monitor competitors
           </text>
 
           {/* Platform names - no extrusion */}
@@ -421,6 +421,8 @@ export default function HomePage() {
                   href="https://calendly.com/santalucia/geo"
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Schedule a personalized demo of GEO Advisor platform"
+                  aria-label="Book a demo with our team"
                   className="relative inline-block px-8 py-4 font-bold text-white backdrop-blur-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all transform hover:scale-[1.02] active:scale-[0.98] rounded-[14px]"
                   style={{
                     cursor: "auto",
