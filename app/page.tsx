@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [screenCenter, setScreenCenter] = useState({ x: 960, y: 540 });
+  const [isMobile, setIsMobile] = useState(false);
 
   // Performance settings
   const isLowPerformance =
@@ -16,34 +17,59 @@ export default function HomePage() {
       ));
 
   useEffect(() => {
+    // Check if mobile device
+    const checkMobile = () => {
+      const isMobileDevice =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth < 768;
+      setIsMobile(isMobileDevice);
+
+      // Set static shadow position for mobile
+      if (isMobileDevice) {
+        setMousePosition({ x: window.innerWidth / 2 - 100, y: 100 });
+      }
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     setScreenCenter({
       x: window.innerWidth / 2,
       y: window.innerHeight / 2,
     });
 
-    let frameId: number;
-    let lastX = 0,
-      lastY = 0;
+    // Only add mouse tracking for non-mobile devices
+    if (!isMobile) {
+      let frameId: number;
+      let lastX = 0,
+        lastY = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (frameId) return;
+      const handleMouseMove = (e: MouseEvent) => {
+        if (frameId) return;
 
-      frameId = requestAnimationFrame(() => {
-        if (
-          Math.abs(e.clientX - lastX) > 5 ||
-          Math.abs(e.clientY - lastY) > 5
-        ) {
-          setMousePosition({ x: e.clientX, y: e.clientY });
-          lastX = e.clientX;
-          lastY = e.clientY;
-        }
-        frameId = 0;
-      });
-    };
+        frameId = requestAnimationFrame(() => {
+          if (
+            Math.abs(e.clientX - lastX) > 5 ||
+            Math.abs(e.clientY - lastY) > 5
+          ) {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+            lastX = e.clientX;
+            lastY = e.clientY;
+          }
+          frameId = 0;
+        });
+      };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("resize", checkMobile);
+      };
+    }
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [isMobile]);
 
   return (
     <div
@@ -52,25 +78,27 @@ export default function HomePage() {
         width: "100%",
         height: "100vh",
         position: "relative",
-        cursor: "none",
+        cursor: isMobile ? "auto" : "none",
       }}
     >
-      {/* Custom circular cursor */}
-      <div
-        style={{
-          position: "fixed",
-          left: mousePosition.x - 20,
-          top: mousePosition.y - 20,
-          width: 30,
-          height: 30,
-          borderRadius: "50%",
-          border: "5px solid rgba(255, 255, 255, 0.5)",
-          backgroundColor: "rgba(255, 255, 255, 0.05)",
-          pointerEvents: "none",
-          zIndex: 9999,
-          transition: "transform 0.1s ease-out",
-        }}
-      />
+      {/* Custom circular cursor - hidden on mobile */}
+      {!isMobile && (
+        <div
+          style={{
+            position: "fixed",
+            left: mousePosition.x - 20,
+            top: mousePosition.y - 20,
+            width: 30,
+            height: 30,
+            borderRadius: "50%",
+            border: "5px solid rgba(255, 255, 255, 0.5)",
+            backgroundColor: "rgba(255, 255, 255, 0.05)",
+            pointerEvents: "none",
+            zIndex: 9999,
+            transition: "transform 0.1s ease-out",
+          }}
+        />
+      )}
 
       {/* SVG for texture and 3D text */}
       <svg
@@ -267,12 +295,12 @@ export default function HomePage() {
             y="35%"
             textAnchor="middle"
             dominantBaseline="middle"
-            fontSize="100"
+            fontSize={isMobile ? "40" : "100"}
             fontWeight="bold"
             fill="rgba(255, 255, 255, 1)"
             filter="url(#textShadow)"
             style={{
-              letterSpacing: "0.2em",
+              letterSpacing: isMobile ? "0.1em" : "0.2em",
               userSelect: "none",
             }}
           >
@@ -282,15 +310,15 @@ export default function HomePage() {
           {/* Subtitle - no extrusion */}
           <text
             x="50%"
-            y="45%"
+            y={isMobile ? "43%" : "45%"}
             textAnchor="middle"
             dominantBaseline="middle"
-            fontSize="22"
+            fontSize={isMobile ? "12" : "22"}
             fontWeight="600"
             fill="rgba(255, 255, 255, 1)"
             filter="url(#textGlow)"
             style={{
-              letterSpacing: "0.3em",
+              letterSpacing: isMobile ? "0.15em" : "0.3em",
               userSelect: "none",
               textTransform: "uppercase",
             }}
@@ -299,21 +327,56 @@ export default function HomePage() {
           </text>
 
           {/* Description text - no extrusion */}
-          <text
-            x="50%"
-            y="64%"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontSize="20"
-            fontWeight="500"
-            fill="rgba(255, 255, 255, 1)"
-            filter="url(#textGlow)"
-            style={{
-              userSelect: "none",
-            }}
-          >
-            Track brand mentions • Measure sentiment • Monitor competitors
-          </text>
+          {!isMobile ? (
+            <text
+              x="50%"
+              y="64%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fontSize="20"
+              fontWeight="500"
+              fill="rgba(255, 255, 255, 1)"
+              filter="url(#textGlow)"
+              style={{
+                userSelect: "none",
+              }}
+            >
+              Track brand mentions • Measure sentiment • Monitor competitors
+            </text>
+          ) : (
+            <>
+              <text
+                x="50%"
+                y="52%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontSize="14"
+                fontWeight="500"
+                fill="rgba(255, 255, 255, 1)"
+                filter="url(#textGlow)"
+                style={{
+                  userSelect: "none",
+                }}
+              >
+                Track brand mentions
+              </text>
+              <text
+                x="50%"
+                y="56%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontSize="14"
+                fontWeight="500"
+                fill="rgba(255, 255, 255, 1)"
+                filter="url(#textGlow)"
+                style={{
+                  userSelect: "none",
+                }}
+              >
+                Measure sentiment • Monitor competitors
+              </text>
+            </>
+          )}
 
           {/* Platform names - no extrusion */}
           <g style={{ overflow: "visible" }}>
@@ -324,10 +387,10 @@ export default function HomePage() {
                   <text
                     key={platform}
                     x={`${xPos}%`}
-                    y="70%"
+                    y={isMobile ? "60%" : "70%"}
                     textAnchor="middle"
                     dominantBaseline="middle"
-                    fontSize="16"
+                    fontSize={isMobile ? "11" : "16"}
                     fontWeight="700"
                     fill="rgba(255, 255, 255, 1)"
                     filter="url(#textGlow)"
@@ -355,7 +418,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center justify-center min-h-screen px-6">
           <div
             className="max-w-3xl mx-auto text-center"
-            style={{ marginTop: "80px" }}
+            style={{ marginTop: isMobile ? "280px" : "80px" }}
           >
             {/* Book Demo button with shadow */}
             <div style={{ position: "relative", display: "inline-block" }}>
