@@ -178,7 +178,7 @@ Educational content explaining:
 
 ### External Integrations
 
-- **Calendly**: Demo scheduling (https://calendly.com/santalucia/geo)
+- **Calendly**: Demo scheduling (https://calendly.com/smirpuri-mba2026/30min)
 - **App Platform**: Links to app.geoadvisor.io
 - **Future**: Google Analytics/GTM ready
 
