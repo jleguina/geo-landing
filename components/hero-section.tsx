@@ -18,16 +18,12 @@ export function HeroSection() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white text-shadow-sm mb-6 sm:mb-8 px-4 sm:px-0">
-            Optimize Your Brand's Voice in{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              AI Search
-            </span>
+            Optimize Your Brand's Visibility in AI Search
           </h1>
 
           <p className="mx-auto max-w-4xl text-base sm:text-lg lg:text-xl leading-7 sm:leading-8 text-white/90 font-medium mb-8 sm:mb-12 px-4 sm:px-6 lg:px-0">
-            Track, benchmark, and improve your mentions across ChatGPT, Gemini,
-            Claude, and Perplexity with enterprise-grade analytics and
-            actionable insights.
+            Track, benchmark, and optimize your mentions across ChatGPT, Gemini,
+            Claude, and Perplexity.
           </p>
 
           <div className="flex items-center justify-center">
@@ -40,6 +36,7 @@ export function HeroSection() {
                 href="https://calendly.com/smirpuri-mba2026/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Request a demo of GEO Advisor platform"
               >
                 Request Demo
                 <ArrowRight className="ml-2 h-5 w-5" />

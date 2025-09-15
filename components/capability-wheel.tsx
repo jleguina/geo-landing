@@ -70,14 +70,15 @@ export function CapabilityWheel() {
                 Platform Capabilities
               </Badge>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
-                Complete AI Search{" "}
+                Generative Engine Optimization{" "}
                 <span className="bg-gradient-to-r from-brand-purple-600 to-brand-blue-600 bg-clip-text text-transparent">
-                  Intelligence Platform
+                  Platform
                 </span>
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-4xl mx-auto font-medium leading-relaxed px-4 sm:px-0">
-                Three core capabilities that give you complete control and
-                optimization power over your AI search presence
+                Automated testing at scale, competitive intelligence, and
+                actionable insights to improve your AI search visibility and
+                brand performance
               </p>
             </div>
 

@@ -74,9 +74,9 @@ export function MetricsDashboard() {
                 Live Analytics Dashboard
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
-                Core Performance{" "}
+                AI Visibility{" "}
                 <span className="bg-gradient-to-r from-brand-purple-600 to-brand-blue-600 bg-clip-text text-transparent">
-                  Metrics
+                  Analytics
                 </span>
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-4xl mx-auto font-medium leading-relaxed px-4 sm:px-0">

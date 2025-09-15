@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function QueryAnalysisTable() {
@@ -73,9 +73,9 @@ export function QueryAnalysisTable() {
           <CardHeader className="p-6 sm:p-8 lg:p-12 pb-6 sm:pb-8">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-xl sm:text-2xl font-bold text-neutral-900">
-                  Query Analysis
-                </CardTitle>
+                <h2 className="text-xl sm:text-2xl font-bold text-neutral-900">
+                  Query Analysis & AI Response Tracking
+                </h2>
                 <p className="text-sm sm:text-base text-neutral-700 mt-2">
                   Detailed insights into how AI models respond to your queries
                 </p>
